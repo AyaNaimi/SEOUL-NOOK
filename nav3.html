@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart" />
+      <link rel="stylesheet" href="cart.js">
+   
+    <title>ACCEUIL</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap');
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+a{
+    text-decoration: none;
+}
+header{
+    width: 1140px;
+    max-width: 80%;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+header a{
+    color: #eee;
+    margin-right: 40px;
+}
+
+.carousel{
+    
+    height: 100vh;
+    margin-top: 10px;
+    width: 95vw;
+    overflow: hidden;
+    position: relative;
+}
+.carousel .list .item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.carousel .list .item img{
+    width:100%;
+      
+    height: 100%;
+    object-fit: cover;
+}
+.carousel .list .item .content{
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+}
+.carousel .list .item .author{
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+.carousel .list .item .title,
+.carousel .list .item .topic{
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+.carousel .list .item .topic{
+    color: #f1683a;
+}
+.carousel .list .item .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+.carousel .list .item .buttons button{
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+.carousel .list .item .buttons button:nth-child(2){
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #eee;
+}
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.thumbnail .item .content{
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+.thumbnail .item .content .title{
+    font-weight: 500;
+}
+.thumbnail .item .content .description{
+    font-weight: 300;
+}
+.arrows{
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.arrows button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee4;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+}
+.arrows button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+
+
+
+.carousel .list .item:nth-child(1) .content .author,
+.carousel .list .item:nth-child(1) .content .title,
+.carousel .list .item:nth-child(1) .content .topic,
+.carousel .list .item:nth-child(1) .content .des,
+.carousel .list .item:nth-child(1) .content .buttons
+{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.carousel .list .item:nth-child(1) .content .title{
+    animation-delay: 1.2s!important;
+}
+.carousel .list .item:nth-child(1) .content .topic{
+    animation-delay: 1.4s!important;
+}
+.carousel .list .item:nth-child(1) .content .des{
+    animation-delay: 1.6s!important;
+}
+.carousel .list .item:nth-child(1) .content .buttons{
+    animation-delay: 1.8s!important;
+}
+
+.carousel.next .list .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage .5s linear 1 forwards;
+}
+@keyframes showImage{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.carousel.next .thumbnail .item:nth-last-child(1){
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.prev .list .item img{
+    z-index: 100;
+}
+@keyframes showThumbnail{
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+.carousel.next .thumbnail{
+    animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext{
+    from{
+        transform: translateX(150px);
+    }
+}
+
+
+.carousel .time{
+    position: absolute;
+    z-index: 1000;
+    width: 0%;
+    height: 3px;
+    background-color: #f1683a;
+    left: 0;
+    top: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time{
+    animation: runningTime 3s linear 1 forwards;
+}
+@keyframes runningTime{
+    from{ width: 100%}
+    to{width: 0}
+}
+
+
+/* prev click */
+
+.carousel.prev .list .item:nth-child(2){
+    z-index: 2;
+}
+
+.carousel.prev .list .item:nth-child(2) img{
+    animation: outFrame 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+@keyframes outFrame{
+    to{
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+    }
+}
+
+.carousel.prev .thumbnail .item:nth-child(1){
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.next .arrows button,
+.carousel.prev .arrows button{
+    pointer-events: none;
+}
+.carousel.prev .list .item:nth-child(2) .content .author,
+.carousel.prev .list .item:nth-child(2) .content .title,
+.carousel.prev .list .item:nth-child(2) .content .topic,
+.carousel.prev .list .item:nth-child(2) .content .des,
+.carousel.prev .list .item:nth-child(2) .content .buttons
+{
+    animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+@keyframes contentOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+@media screen and (max-width: 678px) {
+    .carousel .list .item .content{
+        padding-right: 0;
+    }
+    .carousel .list .item .content .title{
+        font-size: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        body {
+            
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow:scroll;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #6D2323;
+            margin: 40px 0;
+        }
+        nav a::before {
+  content: '';
+  position: absolute;
+height: 100%;
+  width: 0px;
+  left: 0;
+  z-index: -1;
+  bottom: 2px;
+  
+  background: #6D2323; 
+  transition: all .9s ease;
+}
+
+nav a:hover:before {
+      width: 100%;
+}
+
+        nav {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+        
+        nav a {
+            z-index: 1;
+            color: #333;
+            text-decoration: none;
+            position: relative;
+            font-size: 18px;
+            margin: 0 15px;
+            padding: 10px;
+            transition: color 0.3s, background-color 0.3s, transform 0.3s;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            color: #ffffff;
+            transform: scale(1.1); 
+            border-radius: 30%;
+        }
+        nav a.active {
+            color: #ffffff;
+            background-color: #7C444F;
+        }
+        .card {
+            background-color: #FAF3E0; 
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 350px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #6D2323; 
+        }
+        .card h3 {
+            margin: 0;
+            padding: 16px;
+            background-color: #6D2323; 
+            color: #FFF5EE;
+        }
+        .card p {
+            padding: 0 16px 16px;
+            color: #7C444F; 
+        }
+        .card button {
+            background-color: #6D2323; 
+            border: none;
+            color: #FFF5EE;
+            padding: 10px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 16px 0;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .card button:hover {
+            background-color: #301111;
+            transform: translateY(-5px);
+            transform: scale(1.1);
+        }
+        .card button:active {
+            background-color: #2e0f0f; 
+        }
+        .card span {
+            background-color: #6D2323;
+            border: none;
+            color: #FFF5EE; 
+            padding: 10px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 16px 0;
+            cursor: pointer;
+            border-radius:40px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .main1{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+        .main2{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+        .main3{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+        
+        .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+        'color' #A31D1D;
+        }
+        .we{
+            width: 112cap;
+            border-radius: 12px;
+            
+        }
+        .pr{
+           color: #6D2323;
+              font-size: 30px;
+              display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+
+        }
+       
+      svg{
+        margin-left:30px ;
+        animation: lop 2s linear infinite;
+        transition: rotate 2s linear infinite;
+        
+        
+      }
+@keyframes lop {
+    0%, 100%{
+        transform:rotate(-20deg);
+
+    }
+   50%{
+        transform: rotate(20deg);
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <h1>SEOUL NOOK</h1>
+    <nav>
+        
+        <a href="nav3.html">ACCEUIL</a>
+        <a href="nav.html">SKIN CARE</a>
+        <a href="nav2.html">K-FASHION</a>
+        <a href="cart.html"><span class="material-symbols-outlined">
+            shopping_cart
+            </span></a>
+    </nav>
+    
+
+      <div class="carousel">
+           
+            <div class="list">
+                <div class="item">
+                    <img src="bestsales.png">
+                    <div class="content">
+                        <div class="author"></div>
+                        <div class="title"></div>
+                        <div class="topic"></div>
+                        <div class="des">
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="best sales (3).png">
+                    <div class="content">
+                        <div class="author">Centella</div>
+                        <div class="title">Collection Centella</div>
+                        <div class="topic">SKIN CARE</div>
+                        <div class="des">
+                            Nettoyant moussant (125 ml) <br>
+
+                            Huile démaquillante (200 ml) <br>
+                            
+                            Toner (210 ml) <br>
+                            
+                            Sérum (30 ml) <br>
+                            
+                            Crème (75 ml)
+                        </div>
+                        <!-- <div class="buttons">
+                            <button>plus</button>
+                            <button>Ajouter au panier</button>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="best sales (2).png">
+                    <div class="content">
+                        <div class="author">Relief Sun</div>
+                        <div class="title">Rice + Probiotics SPF 50+ PA++++</div>
+                        <div class="topic">SKIN CARE</div>
+                        <div class="des">
+                            Une protection solaire douce et efficace à base de riz et de probiotiques, <br>idéale pour une peau saine et éclatante.                        </div>
+                        <!-- <div class="buttons">
+                            <button>plus</button>
+                            <button>Ajouter au panier</button>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="best sales (4).png">
+                    <div class="content">
+                        <div class="author">Le fond</div>
+                        <div class="title">Tenue Minimaliste et Moderne</div>
+                        <div class="topic">K-FASHION</div>
+                        <div class="des">
+                            un costume marron ample avec une longue veste à boutons.                        </div>
+                        <!-- <div class="buttons">
+                            <button>plus</button>
+                            <button>Ajouter au panier</button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        
+        <div class="thumbnail">
+            <div class="item">
+                <img src="bestsales.png">
+                <div class="content">
+                    <div class="title">
+                       BEST SALES
+                    </div>
+                    <div class="description">
+                                       </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="best sales (3).png">
+                <div class="content">
+                    <div class="title">
+                                    Centella     </div>
+                    <div class="description">
+                                Collection Centella                </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="best sales (2).png">
+                <div class="content">
+                    <div class="title">
+                        Relief Sun   
+                    </div>
+                    <div class="description">
+                        Rice + Probiotics SPF 50+ PA++++  
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="best sales (4).png">
+                <div class="content">
+                    <div class="title">
+                        Le fond                    </div>
+                    <div class="description">
+                        Tenue Minimaliste et Moderne                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <div class="time"></div>
+    </div>
+
+    <script src="app.js"></script>
+    </div>
+    <div class="pr">
+        <h2>PROMOTIONS</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#6D2323"><path d="M160-200v-66.67h80v-296q0-83.66 49.67-149.5Q339.33-778 420-796v-24q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v24q80.67 18 130.33 83.83Q720-646.33 720-562.67v296h80V-200H160Zm320-301.33ZM480-80q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM306.67-266.67h346.66v-296q0-72-50.66-122.66Q552-736 480-736t-122.67 50.67q-50.66 50.66-50.66 122.66v296Z"/></svg></div>
+    <div class="main1">
+    <div class="card">
+        <img src="61YU4-2cnfL._SL1500_1000x_9697c4f2-52c1-41e3-8112-7da3aeae3294_900x.webp" alt="">        <h3>Manyo</h3>
+        <p>Pure Cleansing Oil.</p>
+         <span class="price1" >200.00DH</span><br>
+       <button class="add-to-cart" data-product="Pure Cleansing Oil" data-price="200.00" id="li">Ajouter</button>
+    </div>
+    <div class="card">
+        <img style="height: 350px;" src="Marianna 2k23~_.jpg" alt="">        <h3>Marianna</h3>
+        <p>Set Of Lip Sleeping Mask And Lip Balm • 20g</p>
+        <span class="price1">280.00DH</span><br>
+        <button class="add-to-cart" data-product="Set Of Lip Sleeping" data-price="280.00">Ajouter</button>
+    </div></div>
+</body>
+<div class="main2">
+    <div class="card">
+        <img src="0ad77641-b0e4-4331-890c-f67100b15ce1.jpg" alt="">        <h3>Elegance</h3>
+        <p>Pantallon En Nude Trop Chic Et Comfortable</p>
+         <span class="price1">300.00 DH</span><br>
+        <button  class="add-to-cart" data-product="Pantallon En Nude" data-price="300.00">Ajouter</button>
+    </div>
+    <div class="card">
+        <img style="height: 400px;" src="e422de96-3c71-40d5-b7f0-c71f3f82d899.jpg" alt="">        <h3>Beli</h3>
+        <p>Une Jupe En Carreau</p>
+        <span class="price1">300.00DH</span><br>
+        <button class="add-to-cart" data-product="Une Jupe En Carreau" data-price="300.00">Ajouter</button>
+    </div></div>
+    <div class="main3">
+        <div class="card">
+            <img src="fb9c4e7d-0b8f-4d4e-8595-4918bf75b6eb.jpg" alt="">        <h3>Elle</h3>
+            <p>Ensemble Deux Piece En Beige </p>
+             <span class="price1">400.00 DH</span><br>
+            <button class="add-to-cart" data-product="Ensemble Deux Piece En Beige " data-price="400.00">Ajouter</button>
+        </div>
+        <div class="card">
+            <img style="height: 400px;" src="eng_pm_Cosrx-Advanced-Snail-96-Mucin-Power-Essence-100ml-1197_3-1.webp" alt="">        <h3>Corsx</h3>
+            <p>COSRX Advanced Snail 96 Mucin Power Essence</p>
+            <span class="price1">100.00DH</span><br>
+            <button class="add-to-cart" data-product="COSRX Advanced Snail 96" data-price="100.00" id="click">Ajouter</button>
+        </div></div>
+        <script src="cart.js"></script>
+        <style>
+            footer {
+            background-color: #6D2323; 
+            color: #FFF5EE; 
+            width: 100%;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .footer-about,
+        .footer-links,
+        .footer-contact {
+            flex: 1;
+            max-width: 300px;
+            margin: 20px;
+        }
+        .footer-about h3,
+        .footer-links h3,
+        .footer-contact h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        .footer-links ul li a {
+            color: #FFF5EE;
+            text-decoration: none;
+        }
+        .footer-links ul li a:hover {
+            text-decoration: underline;
+        }
+        .footer-contact p {
+            margin: 5px 0;
+        }
+        .social-media a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .social-media img {
+            width: 24px;
+            height: 24px;
+            filter: invert(1);
+        }
+        .footer-bottom {
+            border-top: 1px solid #FFF5EE; 
+            padding-top: 20px;
+        }
+        .footer-bottom p {
+            margin: 0;
+            font-size: 16px;
+        }
+        
+        </style>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>À propos de SEOUL NOOK</h3>
+                    <p>Votre destination unique pour tout ce qui concerne la beauté, la mode et la papeterie. Découvrez nos collections sélectionnées et laissez-vous tenter par les meilleurs produits de Corée.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contacter nous</h3>
+                    <p>Email: info@seoulnook.com</p>
+                    <p>Telephone: +123 456 7890</p>
+                    <div class="social-media">
+                        <a href="#"><img src="https://via.placeholder.com/24/FFFFFF?text=F" alt="Facebook"></a>
+                        <a href="#"><img src="https://via.placeholder.com/24/FFFFFF?text=T" alt="Twitter"></a>
+                        <a href="#"><img src="https://via.placeholder.com/24/FFFFFF?text=I" alt="Instagram"></a>
+                        <a href="#"><img src="https://via.placeholder.com/24/FFFFFF?text=P" alt="Pinterest"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SEOUL NOOK. All Rights Reserved.</p>
+            </div>
+        </footer>
+</body>
+</html>

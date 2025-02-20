@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart" />
+    <title>SEOUL NOOK</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #6D2323; 
+            margin: 40px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+       
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            padding: 10px;
+            transition: color 0.3s, background-color 0.3s, transform 0.3s;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            color: #FFFFF0;
+            background-color: #6D2323; 
+            transform: scale(1.1);
+        }
+        nav a.active {
+            color: #ffffff;
+            background-color: #3D0301; 
+        }
+        .card {
+            background-color: #FAF3E0; 
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 350px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #6D2323; 
+        }
+        .card h3 {
+            margin: 0;
+            padding: 16px;
+            background-color: #6D2323; 
+            color: #FFF5EE; 
+        }
+        .card p {
+            padding: 0 16px 16px;
+            color: #696969; 
+        }
+        .card button {
+            background-color: #6D2323; 
+            border: none;
+            color: #FFF5EE; 
+            padding: 10px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 16px 0;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .card button:hover {
+            background-color: #3D0301; 
+            transform: translateY(-5px);
+            transform: scale(1.1);
+        }
+        .card span {
+            background-color: #6D2323;
+            border: none;
+            color: #FFF5EE; 
+            padding: 10px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 16px 0;
+            cursor: pointer;
+            border-radius:40px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .main1{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+        .main2{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+        .main3{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+        
+        .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+        'color' #A31D1D;
+        }
+        .we{
+            width: 112cap;
+            border-radius: 12px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <h1>SEOUL NOOK</h1>
+    <nav>
+        
+        <a href="nav3.html">ACCEUIL</a>
+        <a href="nav.html">SKIN CARE</a>
+        <a href="nav2.html">K-FASHION</a>
+        
+        <a href="cart.html"><span class="material-symbols-outlined">
+            shopping_cart
+            </span></a>
+    </nav>
+    <img class="we" src="210719-k-beauty-bd-2x1-update.jpg" alt="">
+    <div class="main1">
+    <div class="card">
+        <img src="1711670573-pyunkang-yul-essence-toner-66060529c96f4.avif" alt="">        <h3>Pyunkang</h3>
+        <p>Pyunkang Yul Essence Toner</p>
+         <span class="price1">200.00DH</span><br>
+        <button>Ajouter</button>
+    </div>
+    <div class="card">
+        <img style="height: 350px;" src="LANE0037F_1.jpg" alt="">        <h3>Laneige</h3>
+        <p>Set Of Lip Sleeping Mask And Lip Balm • 20g</p>
+        <span class="price1">280.00DH</span><br>
+        <button>Ajouter</button>
+    </div></div>
+</body>
+<div class="main2">
+    <div class="card">
+        <img src="2023FCAS6thGeneration-60ml-1_270320590_Brand.com_1080px1_1ratio_540x.webp" alt="">        <h3>Sulwhasoo</h3>
+        <p>First Care Activating Serum VI</p>
+         <span class="price1">800.00 DH</span><br>
+        <button>Ajouter</button>
+    </div>
+    <div class="card">
+        <img src="OIII.jpg" alt="">        <h3>Belif</h3>
+        <p>Aqua Bomb Hydrating Sleeping Mask with Panthenol</p>
+        <span class="price1">300.00DH</span><br>
+        <button>Ajouter</button>
+    </div></div>
+    <div class="main3">
+        <div class="card">
+            <img src="1711670588-lagom-cellus-aqualane-solution-66060538c5f6a.avif" alt="">        <h3>Lagom</h3>
+            <p>Lagom Cellus Aqualane Solution</p>
+             <span class="price1">400.00 DH</span><br>
+            <button>Ajouter</button>
+        </div>
+        <div class="card">
+            <img src="1711670465-dr-jart-ceramidin-skin-barrier-moisturizing-mask-660604be27bc9.avif" alt="">        <h3>Dr. Jart+</h3>
+            <p>Dr. Jart+ Ceramidin Skin Barrier Moisturizing Mask</p>
+            <span class="price1">100.00DH</span><br>
+            <button>Ajouter</button>
+        </div></div>
+        <style>
+            footer {
+            background-color: #6D2323; 
+            color: #FFF5EE; 
+            width: 100%;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .footer-about,
+        .footer-links,
+        .footer-contact {
+            flex: 1;
+            max-width: 300px;
+            margin: 20px;
+        }
+        .footer-about h3,
+        .footer-links h3,
+        .footer-contact h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        .footer-links ul li a {
+            color: #FFF5EE; 
+            text-decoration: none;
+        }
+        .footer-links ul li a:hover {
+            text-decoration: underline;
+        }
+        .footer-contact p {
+            margin: 5px 0;
+        }
+        .social-media a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .social-media img {
+            width: 24px;
+            height: 24px;
+            filter: invert(1);
+        }
+        .footer-bottom {
+            border-top: 1px solid #FFF5EE; 
+            padding-top: 20px;
+        }
+        .footer-bottom p {
+            margin: 0;
+            font-size: 16px;
+        }
+        
+        </style>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>À propos de SEOUL NOOK</h3>
+                    <p>Votre destination unique pour tout ce qui concerne la beauté, la mode et la papeterie. Découvrez nos collections sélectionnées et laissez-vous tenter par les meilleurs produits de Corée.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contacter nous</h3>
+                    <p>Email: info@seoulnook.com</p>
+                    <p>Telephone: +123 456 7890</p>
+                    <div class="social-media">
+                        <a href="#"><img src="https://via.placeholder.com/24/FFFFFF?text=F" alt="Facebook"></a>
+                        <a href="#"><img src="https://via.placeholder.com/24/FFFFFF?text=T" alt="Twitter"></a>
+                        <a href="#"><img src="https://via.placeholder.com/24/FFFFFF?text=I" alt="Instagram"></a>
+                        <a href="#"><img src="https://via.placeholder.com/24/FFFFFF?text=P" alt="Pinterest"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SEOUL NOOK. All Rights Reserved.</p>
+            </div>
+        </footer>
+</body>
+</html>
